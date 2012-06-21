@@ -16,23 +16,23 @@ You only need to download the script, and link it in the HEAD of your page(s). T
 
 You can also set a few custom options:
 
-Option		Description							Default
+Option		Description					Default
 
-elements	Which elements do you want to tame - jQuery-like Selector	'p,li,dd'
+elements	Which elements? jQuery-like Selector		'p,li,dd'
 
-chars		Number of characters to qualify a “widow”. - Number		14
+chars		Number of characters to qualify a “widow”	14
 
-method		Method by which to fix the widow.				'word-spacing'
+method		Method by which to fix the widow		'word-spacing'
 		Options:	'word-spacing'
 				'padding-right/padding-left'
 				'letter-spacing'
 				'nbsp'
 
-dir		Used with certain methods. Positive or negative change.		'pos'
+dir		Used with certain methods. +/- change		'pos'
 		Options:	'pos'
 				'neg'
 
-event		When do you want the fix to run? Any window events.		'orientationchange'
+event		Any window events on which to run the fix	'orientationchange'
 		Suggested Options:	'orientationchange'
 					'resize'
 
