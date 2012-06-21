@@ -2,11 +2,11 @@ The Widow Tamer
 
 …is a Javascript to automatically fix typographic widows on your web pages. It is designed to work with responsive sites, fixing widows as it finds them on resize or orientation change.
 
-*What is a Widow?*
+What is a Widow?
 
 Widows are left over characters at the end of a paragraph. If the last line of a paragraph contains less than 14 characters (for example), it is said to have a widow. Widows are disruptive to both text layouts and reading experiences. Therefore, we must tame them.
 
-*How does The Widow Tamer work?*
+How does The Widow Tamer work?
 
 By setting the elements you want fixed, the number of characters you consider a “widow”, and the method by which you want them fixed, you can eliminate widows from your site. The script will cycle through the elements, apply your “method” (more on that later), check if the widow has been fixed, and repeat until the widow is tamed.
 
@@ -38,7 +38,7 @@ event		Any window events on which to run the fix	'orientationchange'
 
 The script will run initially on window.onload, and then fire every time the 'event' is triggered.
 
-*Example Implementation*
+Example Implementation
 
 You can run multiple instances of the function target different elements with different methods. For example, here we are adding padding to the right of paragraphs in our main post article:
 
@@ -58,11 +58,11 @@ And on the same page, on the same events, we may want to fix the headers in our 
 	event: 'resize'
     });
 
-*Browser Support*
+Browser Support
 
 The Widow Tamer works in IE8+ and all other modern browsers.
 
-*Details*
+Details
 
 The Widow Tamer was created by Nathan Ford. Feel free to interrupt him any time with questions, concerns, complaints, etc.
 
