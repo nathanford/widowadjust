@@ -1,0 +1,67 @@
+The Widow Tamer
+
+…is a Javascript to automatically fix typographic widows on your web pages. It is designed to work with responsive sites, fixing widows as it finds them on resize or orientation change.
+
+*What is a Widow?*
+
+Widows are left over characters at the end of a paragraph. If the last line of a paragraph contains less than 14 characters (for example), it is said to have a widow. Widows are disruptive to both text layouts and reading experiences. Therefore, we must tame them.
+
+*How does The Widow Tamer work?*
+
+By setting the elements you want fixed, the number of characters you consider a “widow”, and the method by which you want them fixed, you can eliminate widows from your site. The script will cycle through the elements, apply your “method” (more on that later), check if the widow has been fixed, and repeat until the widow is tamed.
+
+You only need to download the script, and link it in the HEAD of your page(s). Then, you can call a simple Javascript function to start taming widows:
+
+    wt.fix();
+
+You can also set a few custom options:
+
+Option			Description							Default
+
+elements		Which elements do you want to tame - jQuery-like Selector	'p,li,dd'
+
+chars			Number of characters to qualify a “widow”. - Number		14
+
+method			Method by which to fix the widow.				'word-spacing'
+			Options:	'word-spacing'
+					'padding-right/padding-left'
+					'letter-spacing'
+					'nbsp'
+
+dir			Used with certain methods. Positive or negative change.		'pos'
+			Options:	'pos'
+					'neg'
+
+event			When do you want the fix to run? Any window events.		'orientationchange'
+			Suggested Options:	'orientationchange'
+						'resize'
+
+The script will run initially on window.onload, and then fire every time the 'event' is triggered.
+
+*Example Implementation*
+
+You can run multiple instances of the function target different elements with different methods. For example, here we are adding padding to the right of paragraphs in our main post article:
+
+    wt.fix({
+	elements: '#posts article p',
+	chars: 20,
+	method: 'padding-right',
+	event: 'resize'
+    });
+
+And on the same page, on the same events, we may want to fix the headers in our footer by adding non-breaking spaces:
+
+    wt.fix({
+	elements: 'footer aside h1',
+	chars: 20,
+	method: 'nbsp',
+	event: 'resize'
+    });
+
+*Details*
+
+The Widow Tamer was created by Nathan Ford. Feel free to interrupt him any time with questions, concerns, complaints, etc.
+
+nathan@artequalswork.com
+@nathan_ford on Twitter
+
