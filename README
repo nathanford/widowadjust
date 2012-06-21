@@ -16,25 +16,25 @@ You only need to download the script, and link it in the HEAD of your page(s). T
 
 You can also set a few custom options:
 
-Option			Description							Default
+Option		Description							Default
 
-elements		Which elements do you want to tame - jQuery-like Selector	'p,li,dd'
+elements	Which elements do you want to tame - jQuery-like Selector	'p,li,dd'
 
-chars			Number of characters to qualify a “widow”. - Number		14
+chars		Number of characters to qualify a “widow”. - Number		14
 
-method			Method by which to fix the widow.				'word-spacing'
-			Options:	'word-spacing'
-					'padding-right/padding-left'
-					'letter-spacing'
-					'nbsp'
+method		Method by which to fix the widow.				'word-spacing'
+		Options:	'word-spacing'
+				'padding-right/padding-left'
+				'letter-spacing'
+				'nbsp'
 
-dir			Used with certain methods. Positive or negative change.		'pos'
-			Options:	'pos'
-					'neg'
+dir		Used with certain methods. Positive or negative change.		'pos'
+		Options:	'pos'
+				'neg'
 
-event			When do you want the fix to run? Any window events.		'orientationchange'
-			Suggested Options:	'orientationchange'
-						'resize'
+event		When do you want the fix to run? Any window events.		'orientationchange'
+		Suggested Options:	'orientationchange'
+					'resize'
 
 The script will run initially on window.onload, and then fire every time the 'event' is triggered.
 
