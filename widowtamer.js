@@ -102,17 +102,23 @@ wt = {
 		return t.innerText || t.textContent;
 		
 	},
+	
+	settext : function (e, t) {
+	
+		if (e.innerText) e.innerText = t;
+		else e.textContent = t; 
+	
+	},
 
 	tamer : function (c, t, text, i, opts) {
-	
+		
 		var h = t.offsetHeight;
 		
-		c.innerHTML = text.slice(0, (opts.chars * -1));
+		wt.settext(c, text.slice(0, (opts.chars * -1)));
 		
 		if (t.offsetHeight < h) {
 		
-			if (opts.method == 'nbsp') 
-				c.innerHTML = wt.text( c ) + text.slice((opts.chars * -1)).replace(/\s/g, '&nbsp;');
+			if (opts.method == 'nbsp') wt.settext(c, wt.text( c ) + text.slice((opts.chars * -1)).replace(/\s/g, '\u00a0'));
 			
 			else {
 					
@@ -122,14 +128,14 @@ wt = {
 				
 				t.style[opts.method] = inc + 'em';
 				
-				c.innerHTML = text;
+				wt.settext(c, text);
 				
 				wt.tamer(c, t, text, i + 1, opts);
 				
 			}
 		
 		}
-		else c.innerHTML = text;
+		else wt.settext(c, text);
 		
 	},
 	

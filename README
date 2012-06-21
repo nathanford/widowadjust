@@ -58,6 +58,10 @@ And on the same page, on the same events, we may want to fix the headers in our 
 	event: 'resize'
     });
 
+*Browser Support*
+
+The Widow Tamer works in IE8+ and all other modern browsers.
+
 *Details*
 
 The Widow Tamer was created by Nathan Ford. Feel free to interrupt him any time with questions, concerns, complaints, etc.
