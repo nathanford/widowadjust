@@ -13,7 +13,12 @@ wt = {
 	
 	to : new Array(),
 	
-	fix : function (opts) { wt.bind('load', function () { wt.init(opts); }); },
+	fix : function (opts) { 
+		
+		if (document.readyState === 'complete') wt.init(opts);
+		wt.bind('load', function () { wt.init(opts); }); 
+	
+	},
 	
 	init : function (opts) {
 	
@@ -54,46 +59,50 @@ wt = {
 		}
 		else opts = wt.opts;
 		
-		var eles = document.querySelectorAll(opts.elements),
-			i = 0;
+		if (document.querySelectorAll) {
 		
-		while (i < eles.length) {
-		
-			var t = eles[i];
-				
-			if (t.offsetHeight > wt.getstyle(t, 'line-height', true)) { 
-				
-				// find a textnode longer than chars
-				var nodes = t.childNodes,
-					j = nodes.length - 1,
-					c = false;
-				
-				while (j >= 0) {
+			var eles = document.querySelectorAll(opts.elements),
+				i = 0;
+			
+			while (i < eles.length) {
+			
+				var t = eles[i];
 					
-					var ntext = wt.text(nodes[j]);
+				if (t.offsetHeight > wt.getstyle(t, 'line-height', true)) { 
 					
-					if (ntext != undefined && ntext.length > opts.chars) {
-						c = nodes[j];
-						break;
+					// find a textnode longer than chars
+					var nodes = t.childNodes,
+						j = nodes.length - 1,
+						c = false;
+					
+					while (j >= 0) {
+						
+						var ntext = wt.text(nodes[j]);
+						
+						if (ntext != undefined && ntext.length > opts.chars) {
+							c = nodes[j];
+							break;
+						}
+						
+						j--;
+						
 					}
 					
-					j--;
+					t.style[opts.method] = '0';
 					
+					var ctext = wt.text( c );
+				
+					if (c) wt.tamer(c, t, ctext, 0, opts);
+				
 				}
 				
-				t.style[opts.method] = '0';
-				
-				var ctext = wt.text( c );
-			
-				if (c) wt.tamer(c, t, ctext, 0, opts);
+				i++;
 			
 			}
 			
-			i++;
+			wt.bind(opts.event, function () { wt.onevent(opts); });
 		
 		}
-		
-		wt.bind(opts.event, function () { wt.onevent(opts); });
 	
 	},
 	
