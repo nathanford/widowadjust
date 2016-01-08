@@ -8,6 +8,7 @@ wt = {
 		chars : 14,
 		method : 'wordSpacing',
 		dir : 'pos',
+		mq : 0,
 		event : 'orientationchange'
 	},
 	
@@ -58,6 +59,10 @@ wt = {
 		
 		}
 		else opts = wt.opts;
+		
+		var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		
+		if ( w < opts.mq ) return;
 		
 		if (document.querySelectorAll) {
 		

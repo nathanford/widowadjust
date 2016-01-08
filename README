@@ -31,6 +31,9 @@ method		Method by which to fix the widow		'word-spacing'
 dir		Used with certain methods. +/- change		'pos'
 		Options:	'pos'
 				'neg'
+				
+mq		Media query, only runs when the viewport	0
+		width is smaller than this
 
 event		Any window events on which to run the fix	'orientationchange'
 		Suggested Options:	'orientationchange'
