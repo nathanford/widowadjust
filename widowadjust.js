@@ -1,4 +1,4 @@
-// Widow Tamer JS by Nathan C. Ford http://artequalswork.com
+// Widow Adjust JS by Nathan C. Ford http://artequalswork.com
 
 wt = {
 	
