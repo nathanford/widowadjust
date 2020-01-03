@@ -4,7 +4,7 @@ Widow Adjust
 
 What is a Widow?
 
-Widows are left over characters at the end of a paragraph. If the last line of a paragraph contains less than 14 characters (for example), it is said to have a widow. Widows are disruptive to both text layouts and reading experiences. Therefore, we must tame them.
+Widows are left over characters at the end of a paragraph. If the last line of a paragraph contains fewer than 14 characters (for example), it is said to have a widow. Widows are disruptive to both text layouts and reading experiences. Therefore, we must tame them.
 
 How does Widow Adjust work?
 
